@@ -85,8 +85,8 @@ export function AboutSection() {
         <div 
           className="mb-12"
           style={{
-            transform: `translateX(${-500 + scrollProgress * 500}px)`,
-            opacity: scrollProgress,
+            transform: `translateX(${-500 + (scrollProgress || 0) * 500}px)`,
+            opacity: scrollProgress || 0,
             transition: 'transform 0.1s ease-out, opacity 0.1s ease-out',
           }}
         >
@@ -113,8 +113,8 @@ export function AboutSection() {
         <div 
           className="mb-12 text-right"
           style={{
-            transform: `translateX(${500 - scrollProgress * 500}px)`,
-            opacity: scrollProgress,
+            transform: `translateX(${500 - (scrollProgress || 0) * 500}px)`,
+            opacity: scrollProgress || 0,
             transition: 'transform 0.1s ease-out, opacity 0.1s ease-out',
           }}
         >
@@ -140,8 +140,8 @@ export function AboutSection() {
         {/* Text 3 - Left aligned, slides from left */}
         <div 
           style={{
-            transform: `translateX(${-500 + scrollProgress * 500}px)`,
-            opacity: scrollProgress,
+            transform: `translateX(${-500 + (scrollProgress || 0) * 500}px)`,
+            opacity: scrollProgress || 0,
             transition: 'transform 0.1s ease-out, opacity 0.1s ease-out',
           }}
         >
@@ -168,8 +168,8 @@ export function AboutSection() {
         <div 
           className="mt-16 flex justify-center"
           style={{
-            transform: `translateY(${50 - scrollProgress * 50}px)`,
-            opacity: scrollProgress,
+            transform: `translateY(${50 - (scrollProgress || 0) * 50}px)`,
+            opacity: scrollProgress || 0,
             transition: 'transform 0.1s ease-out, opacity 0.1s ease-out',
           }}
         >

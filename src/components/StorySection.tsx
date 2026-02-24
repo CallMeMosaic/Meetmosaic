@@ -92,8 +92,8 @@ export function StorySection() {
               rgba(109, 40, 217, 0.35) 100%
             )
           `,
-          transform: `translateX(${100 - scrollProgress * 100}%)`,
-          opacity: scrollProgress * 0.8,
+          transform: `translateX(${100 - (scrollProgress || 0) * 100}%)`,
+          opacity: (scrollProgress || 0) * 0.8,
           transition: 'transform 0.3s ease-out, opacity 0.3s ease-out',
         }}
       ></div>
@@ -101,7 +101,7 @@ export function StorySection() {
       {/* Content with scroll animations */}
       <div className="relative z-10 w-full max-w-4xl px-8 md:px-16">
         {paragraphs.map((para, index) => {
-          const adjustedProgress = Math.max(0, Math.min(1, (scrollProgress - para.delay) * 1.5));
+          const adjustedProgress = Math.max(0, Math.min(1, ((scrollProgress || 0) - para.delay) * 1.5));
           
           return (
             <div 
