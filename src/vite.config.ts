@@ -20,6 +20,9 @@ function figmaAssetPlugin() {
 export default defineConfig({
   plugins: [react(), figmaAssetPlugin()],
   base: './', // Use relative paths for assets
+  css: {
+    postcss: './postcss.config.js',
+  },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
