@@ -1,8 +1,18 @@
-@import "tailwindcss/preflight";
+/*@import "tailwindcss/preflight";*/
+/*@import url('https://use.typekit.net/qhs3bje.css');*/
 @import url('https://use.typekit.net/qhs3bje.css');
 
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
 
+
+
+/*@theme {*/
+/*  --color-border: hsl(240 5% 26%);*/
+/*  --color-background: hsl(0 0% 0%);*/
+/*  --color-foreground: hsl(0 0% 100%);*/
+/*}*/
 
 
 @layer base {
