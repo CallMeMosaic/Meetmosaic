@@ -8,11 +8,11 @@ export default {
             const resendResponse = await fetch('https://api.resend.com/emails', {
                 method: 'POST',
                 headers: {
-                    'Authorization': `Bearer ${env.RESEND_API_KEY}`,
+                    'Authorization': `Bearer ${env.re_N2whDasu_42kESMwpoKAUVqe2yiGkkX2a}`,
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    from: 'Mosaic Contact <contact@rawmosaic.com>',
+                    from: "Mosaic Contact <onboarding@resend.dev>",
                     to: ['contact@mail.rawmosaic.com'],
                     subject: `New portfolio message from ${name}`,
                     reply_to: email,
