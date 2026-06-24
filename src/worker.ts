@@ -3,7 +3,7 @@ export default {
         const url = new URL(request.url);
 
         if (url.pathname === '/api/contact' && request.method === 'POST') {
-            const { name, email, projectType, message } = await request.json();
+            const {name, email, projectType, message} = await request.json();
 
             const resendResponse = await fetch('https://api.resend.com/emails', {
                 method: 'POST',
@@ -30,7 +30,10 @@ export default {
                     }),
                     {
                         status: 500,
-                        headers: { "Content-Type": "application/json" },
+                        headers: {"Content-Type": "application/json"},
                     }
                 );
             }
+        }
+    }
+}
