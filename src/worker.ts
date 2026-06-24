@@ -8,7 +8,7 @@ export default {
             const resendResponse = await fetch('https://api.resend.com/emails', {
                 method: 'POST',
                 headers: {
-                    'Authorization': `Bearer ${env.re_N2whDasu_42kESMwpoKAUVqe2yiGkkX2a}`,
+                    'Authorization': `Bearer ${env.RESEND_API_KEY}`,
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
