@@ -1,5 +1,5 @@
 # wrangler.toml
-name = "meet"
+name = 'meetmosaic'
 main = "src/worker.ts"
 compatibility_date = "2026-06-24"
 
