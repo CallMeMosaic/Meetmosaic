@@ -50,7 +50,10 @@ export function ContactFormOverlay({ isOpen, onClose }: ContactFormOverlayProps)
             });
 
             if (!response.ok) {
-                throw new Error('Failed to send message');
+                const errorText = await response.text();
+                console.error("Contact form failed:", errorText);
+                alert(errorText);
+                throw new Error(errorText);
             }
 
             alert('Message sent!');

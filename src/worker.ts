@@ -19,14 +19,18 @@ export default {
                     text: `Name: ${name}\nEmail: ${email}\nProject: ${projectType}\n\n${message}`,
                 }),
             });
+            const responseText = await resend.text();
 
             if (!resendResponse.ok) {
-                return new Response('Email failed', { status: 500 });
+                return new Response(
+                    JSON.stringify({
+                        error: "Resend failed",
+                        status: resend.status,
+                        details: responseText,
+                    }),
+                    {
+                        status: 500,
+                        headers: { "Content-Type": "application/json" },
+                    }
+                );
             }
-
-            return new Response('OK', { status: 200 });
-        }
-
-        return env.ASSETS.fetch(request);
-    },
-};
