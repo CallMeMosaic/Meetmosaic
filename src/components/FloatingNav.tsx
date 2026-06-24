@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
-export function FloatingNav() {
+interface FloatingNavProps {
+    onContactClick: () => void;
+}
+
+export function FloatingNav({ onContactClick }: FloatingNavProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { label: 'HOME', href: '#hero' },
     { label: 'ABOUT', href: '#about-section' },
     { label: 'PORTFOLIO', href: '#portfolio' },
-    { label: 'CONTACT', href: '#contact' },
+      { label: 'CONTACT', href: '#contact', action: onContactClick },
   ];
 
   const scrollToSection = (href: string) => {
@@ -84,7 +88,14 @@ export function FloatingNav() {
             {navItems.map((item, index) => (
               <button
                 key={index}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => {
+                    if (item.action) {
+                        item.action();
+                        setIsOpen(false);
+                    } else {
+                        scrollToSection(item.href);
+                    }
+                }}
                 className="group relative text-left px-4 py-3 rounded transition-all duration-300 hover:bg-white/10"
                 style={{
                   fontFamily: '"ethnocentric", sans-serif',

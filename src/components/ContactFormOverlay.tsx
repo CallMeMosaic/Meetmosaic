@@ -38,18 +38,30 @@ export function ContactFormOverlay({ isOpen, onClose }: ContactFormOverlayProps)
     };
   }, [isOpen]);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      alert('Message sent! (This is a demo - in production, connect to your backend)');
-      setIsSubmitting(false);
-      setFormData({ name: '', email: '', projectType: '', message: '' });
-      onClose();
-    }, 2000);
-  };
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to send message');
+            }
+
+            alert('Message sent!');
+            setFormData({ name: '', email: '', projectType: '', message: '' });
+            onClose();
+        } catch (error) {
+            alert('Message could not be sent. Please try again later.');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({

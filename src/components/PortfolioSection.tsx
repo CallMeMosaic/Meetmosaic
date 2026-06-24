@@ -10,12 +10,14 @@ import fashionImage from 'figma:asset/6eda5e33d8068efbbc3e420f90d4f179444bd6a1.p
 import cosplayImage from 'figma:asset/5536000897216a83d408f6060d0cd6f865e62939.png';
 import castingsImage from 'figma:asset/b4e5492730f6abce6cc611a6d2d1a3022b30dd3a.png';
 import { CosplayGallery } from './CosplayGallery';
+import { CastingsGallery} from "./CastingsGallery.tsx";
 
 export function PortfolioSection() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [scrollY, setScrollY] = React.useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [isCosplayOpen, setIsCosplayOpen] = useState(false);
+  const [isCastingsOpen, setIsCastingsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -363,7 +365,7 @@ export function PortfolioSection() {
           }}
         >
           <a
-            href="https://your-portfolio-link.com"
+            href="rawmosaic.com"
             target="_blank"
             rel="noopener noreferrer"
             className="relative block max-w-lg cursor-pointer group"

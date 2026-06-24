@@ -18,7 +18,7 @@ export default function App() {
       {/* Global effects */}
       <CursorParticles />
       <FloatingGlassShards />
-      <FloatingNav />
+        <FloatingNav onContactClick={() => setIsContactOpen(true)} />
       
       {/* Contact Form Overlay */}
       <ContactFormOverlay isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />

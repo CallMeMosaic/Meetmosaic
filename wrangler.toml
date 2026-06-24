@@ -1,0 +1,11 @@
+# wrangler.toml
+name = "meet"
+main = "src/worker.ts"
+compatibility_date = "2026-06-24"
+
+workers_dev = true
+
+[assets]
+directory = "./build"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
