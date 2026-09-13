@@ -71,7 +71,7 @@ export function CosplayGallery({ isOpen, onClose }: CosplayGalleryProps) {
       images: [
         { id: 20, url: '/sorted_assets/cosplay/TLU/TLU1.jpg', title: 'Sitting and walking' },
         { id: 21, url: '/sorted_assets/cosplay/TLU/TLU2.jpg', title: 'Something moved!' },
-        { id: 22, url: '/sorted_assets/cosplay/TLU/TLU3.jpg', title: 'Drawing the Gun' },
+        //{ id: 22, url: '/sorted_assets/cosplay/TLU/TLU3.jpg', title: 'Drawing the Gun' },
         //{ id: 23, url: '/sorted_assets/cosplay/TLU/TLU4.jpg', title: 'Approaching' },
         //{ id: 24, url: '/sorted_assets/cosplay/TLU/TLU5.jpg', title: 'Spotting' },
         //{ id: 25, url: '/sorted_assets/cosplay/TLU/TLU6.jpg', title: 'Close Up' },
@@ -90,7 +90,7 @@ export function CosplayGallery({ isOpen, onClose }: CosplayGalleryProps) {
       images: [
         //{ id: 30, url: '/sorted_assets/cosplay/BS/BS1.jpg', title: 'Sitting and walking' },
         //{ id: 31, url: '/sorted_assets/cosplay/BS/BS2.jpg', title: 'Something moved!' },
-        //{ id: 32, url: '/sorted_assets/cosplay/BS/BS3.jpg', title: 'Drawing the Gun' },
+        { id: 32, url: '/sorted_assets/cosplay/BS/BS3.jpg', title: 'Drawing the Gun' },
         { id: 33, url: '/sorted_assets/cosplay/BS/BS4.jpg', title: 'Approaching' },
         { id: 34, url: '/sorted_assets/cosplay/BS/BS5.jpg', title: 'Spotting' },
         { id: 35, url: '/sorted_assets/cosplay/BS/BS6.jpg', title: 'Close Up' },
